@@ -23,7 +23,7 @@ public class RobotMovement {
 
     // We can make this lazy-init (or take out to builder/factory class).
     // Holding reference to avoid creating multiple instance of Actions.
-    // Any way, actions are not holding any resource.)
+    // Any way, actions are not holding any stateful resource. So cache it.
     private LeftAction leftAction = new LeftAction();
     private RightAction rightAction = new RightAction();
     private MoveAction moveAction = new MoveAction();

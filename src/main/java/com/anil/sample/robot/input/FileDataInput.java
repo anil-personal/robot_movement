@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Reading input from a file.
+ */
 public class FileDataInput implements Input {
 
     private final String filePath;

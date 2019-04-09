@@ -14,17 +14,28 @@ public final class Position {
     private int maxY = 5; // Defaults to 5.
 
     public Position(int x, int y, Facing facing) {
+        verifyInput(x, y, maxX,maxY);
         this.x = x;
         this.y = y;
         this.facing = facing;
     }
 
     public Position(int x, int y, Facing facing, int maxX, int maxY) {
+        verifyInput(x,y,maxX,maxY);
         this.x = x;
         this.y = y;
         this.facing = facing;
         this.maxX = maxX;
         this.maxY = maxY;
+    }
+
+    private void verifyInput(int x, int y, int maximumX, int maximumY) {
+        if(x > maximumX){
+            throw new IllegalArgumentException("position x must be between 0 and "+maxX);
+        }
+        if(y > maximumY){
+            throw new IllegalArgumentException("position x must be between 0 and "+maxY);
+        }
     }
 
     public int getX() {
@@ -85,7 +96,7 @@ public final class Position {
      * Enum for Facing
      */
     public enum Facing {
-        NORTH("North"), SOUTH("South"), WEST("West"), EAST("East");
+        NORTH("NORTH"), SOUTH("SOUTH"), WEST("WEST"), EAST("EAST");
 
         private final String direction;
 

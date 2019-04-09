@@ -3,6 +3,10 @@ package com.anil.sample.robot.action;
 import com.anil.sample.robot.exception.CanNotMoveException;
 import com.anil.sample.robot.domain.Position;
 
+/**
+ * Move Action
+ * Robot moves one step on the direction facing.
+ */
 public class MoveAction implements Action {
 
     public void perform(final Position position) throws CanNotMoveException {
